@@ -3,6 +3,7 @@ from sqlalchemy import String
 from typing import TYPE_CHECKING
 
 from .base import Base
+from .profile import Profile
 
 
 if TYPE_CHECKING:
@@ -13,3 +14,4 @@ class User(Base):
 
     
     post: Mapped[list['Post']] = relationship(back_populates='user')
+    profile: Mapped['Profile'] = relationship(back_populates='user')
